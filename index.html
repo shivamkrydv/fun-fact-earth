@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        /* Container Styles */
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #0078d4;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #555;
+        }
+
+        button {
+            background-color: #0078d4;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #005ea3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Fun Fact Generator 🎉</h1>
+        <p id="fact">Click the button to see a fun fact!</p>
+        <button id="generateBtn">Get a Fun Fact!</button>
+    </div>
+
+    <script>
+        // Array of fun facts
+        const funFacts = [
+            "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
+            "A day on Venus is longer than a year on Venus.",
+            "Octopuses have three hearts, and two of them stop beating when they swim.",
+            "Bananas are berries, but strawberries aren't.",
+            "The Eiffel Tower can grow up to 6 inches taller in the summer due to thermal expansion.",
+            "Wombat poop is cube-shaped.",
+            "There’s a species of jellyfish that is biologically immortal.",
+            "The longest recorded flight of a chicken is 13 seconds.",
+            "Sloths can hold their breath longer than dolphins can.",
+            "Your taste buds have a lifespan of about 10 days."
+        ];
+
+        // Function to generate a random fun fact
+        function generateFact() {
+            const factElement = document.getElementById("fact");
+            const randomIndex = Math.floor(Math.random() * funFacts.length);
+            factElement.textContent = funFacts[randomIndex];
+        }
+
+        // Event listener for the button
+        document.getElementById("generateBtn").addEventListener("click", generateFact);
+    </script>
+</body>
+</html>
